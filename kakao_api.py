@@ -39,7 +39,7 @@ def crawl(text):
         params = {'query' : text,
                     'page' : page,
                     'size' : 50}
-        headers = {'Authorization' : 'KakaoAK ****'}
+        headers = {'Authorization' : 'KakaoAK ****'} #kakao api
         data = requests.get(url = url, params = params, headers = headers).json()
         titles = [i['title'] for i in data['documents']]
         titles = re.sub('<.+?>', '', str(titles)) #쓸데없는 태그 제거
