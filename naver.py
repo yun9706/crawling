@@ -6,32 +6,7 @@ from selenium.webdriver.chrome.service import Service
 import pandas as pd
 import datetime as dt
 import numpy as np
-# from selenium.webdriver.chrome.options import Options
-# from webdriver_manager.chrome import ChromeDriverManager
-# chrome_options = Options()
-# chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
-# service = Service(executable_path=ChromeDriverManager().install()) #크롬드라이버 매니저를 통해서 자동으로 크롬드라이버 최신버전 가져온 다음, 서비스 객체를 만들어서 서비스 변수에 저장한다.
-# driver = webdriver.Chrome(service = service, options=chrome_options) #크롬 옵션이 담긴 chrome_options 추가
 
-CLIENT_ID = 'mrSfvLGnQO6LEqIRrvBV'
-CLIENT_SECRET = 'KFMENHW9H3'
-
-# text_list = ['밀양', '밀양 숙박', '밀양 맛집', '밀양 여행', '밀양 관광', '밀양 명소', '밀양 축제']
-# craw_text = '밀양'
-
-# 네이버 open api 통해서 blog 링크 가져오기
-def naver_blog(text):
-    
-    url = 'https://openapi.naver.com/v1/search/blog'
-    params = {'query' : text,
-              'display' : 100}
-    headers = {'X-Naver-Client-Id' : CLIENT_ID,
-               'X-Naver-Client-Secret' : CLIENT_SECRET}
-    data = requests.get(url = url, params = params, headers = headers).json()
-    blog_link = data['items'][0]['link']
-    return blog_link
-    
-    
 
 ## 네이버 
 def crawl_naver(url) :
@@ -69,6 +44,3 @@ def crawl_naver(url) :
    
     
     return text
-
-# text = crawl_naver('https://blog.naver.com/xodnaka1/222870421925')
-# print(text)
