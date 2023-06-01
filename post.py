@@ -3,12 +3,6 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-# from selenium.webdriver.chrome.options import Options
-# from webdriver_manager.chrome import ChromeDriverManager
-# chrome_options = Options()
-# chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
-# service = Service(executable_path=ChromeDriverManager().install()) #크롬드라이버 매니저를 통해서 자동으로 크롬드라이버 최신버전 가져온 다음, 서비스 객체를 만들어서 서비스 변수에 저장한다.
-# driver = webdriver.Chrome(service = service, options=chrome_options) #크롬 옵션이 담긴 chrome_options 추가
 
 def crawl_post(url) :
     # 백그라운드 실행
